@@ -1,52 +1,12 @@
 # Import External Functions
-import pygame, colorama, os
+from __future__     import print_function
+from time           import sleep
+from joystick_class import Joystick
 
-# Define Internal Functions
-def info(string):
-    print(colorama.Fore.BLUE + "INFO: " + string)
-def error(string):
-    print(colorama.Fore.RED + "ERROR: " + string)
-def warning(string):
-    print(colorama.Fore.ORANGE + "WARNING: " + string)
-
-# Set Up Colorama
-print(colorama.Style.BRIGHT)
-os.system("clear")
-
-# Get Joystick Count
-pygame.joystick.init()
-numJoysticks = pygame.joystick.get_count()
-
-# Alert The User That The Program Has Started
-info("Program Initiated")
-
-# Check That There Are 2 Joysticks Connected
-if(numJoysticks != 2):
-    error("Incorrect Joystick Number. Expected: 2, Connected: {}".format(numJoysticks))
-else:
-    info("2 Joysticks Connected")
-
-    # Create Joystick Objects
-    js0 = pygame.joystick.Joystick(0)
-    js0.init()
-    info("Joystick 0: " + str(js0))
-    js1 = pygame.joystick.Joystick(1)
-    js1.init()
-    info("Joystick 1: " + str(js1))
-
-    # Check Which Joystick Is Black
-    if(js0.get_button(2) == True):
-        info("Joystick 0: Black Joystick")
-        info("Joystick 1: White Joystick")
-        black = js0
-        white = js1
-    elif(js1.get_button(2) == True):
-        info("Joystick 0: Joystick")
-        info("Joystick 1: Black Joystick")
-        white = js0
-        black = js1
-    else:
-        error("No Signal on Black Joystick, Button Port 2")
-
-# Alert The User The Program Has Ended
-info("Program Ended")
+js = Joystick(0)
+js.inputListener("up",    lambda: print("UP!"))
+js.inputListener("down",  lambda: print("DOWN!"))
+js.inputListener("left",  lambda: print("LEFT!"))
+js.inputListener("right", lambda: print("RIGHT!"))
+sleep(10)
+js.endListeners()
