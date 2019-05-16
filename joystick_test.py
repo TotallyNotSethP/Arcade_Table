@@ -15,9 +15,8 @@ from os import system # This function runs a bash command.
 #    js.inputListener("a", lambda: print("A!")) # This prints a message on a button.
 #    js.inputListener("b", lambda: print("B!")) # This prints a message on b button.
 #except: # This catches excpetions.
-#    sleep(0) # This acts as a placeholder (so Python won't get mad at an empty "except:"). It doesn't do anything.
-#js.endListeners() # This ends the listeners (so the threads end and the program will exit).
-#system("clear") # This clears the screen.
+#    js.endListeners() # This ends the listeners (so the threads end and the program will exit).
+#    system("clear") # This clears the screen.
 
 # ".getInput" method (uncomment to try)
 
@@ -33,5 +32,4 @@ from os import system # This function runs a bash command.
 #        print("B: " + str(js.getInput("b"))) # This prints "True" on button b.
 #        sleep(0.1) # This waits 1/10 of a second so the CPU isn't overloaded.
 #except: # This catches excpetions.
-#    sleep(0) # This acts as a placeholder (so Python won't get mad at an empty "except:"). It doesn't do anything.
-#system("clear") # This clears the screen.
+#    system("clear") # This clears the screen.
