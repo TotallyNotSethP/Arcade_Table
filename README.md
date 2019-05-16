@@ -2,7 +2,7 @@
 ## About
 Hello! My name is Seth Peace! My dad and I decided to make a table that you can play games on. This is the software for that table. It's powered by Python and PyGame on a Raspberry Pi 3 B+.
 ## Status
-So far, we have successfully made a Joystick class to read the joysticks. It's in the file `joystick_class.py`.
+So far, we have successfully made a Joystick class to read the joysticks. It's in the file `joystick_class.py`. We also have a test file for it named `joystick_test.py`.
 ## Usage
 The Joystick class works as follows:
 ```
