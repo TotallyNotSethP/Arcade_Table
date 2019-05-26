@@ -1,10 +1,10 @@
-from pixel import Pixel
+from color import Color
+from os    import system
 
 class Grid:
-    def __init__(self, height, width, gpio_pin):
-        self.height   = height
-        self.width    = width
-        self.gpio_pin = gpio_pin
+    def __init__(self, height, width):
+        self.height = height
+        self.width  = width
         self.reset()
         
     def reset(self):
@@ -23,4 +23,12 @@ class Grid:
         return to_return
                 
 if(__name__ == "__main__"):
+    grid = Grid(33, 17)
+    system("clear")
+    print("Grid Class Test")
+    print("---------------")
+    print("")
+    raw_input("Hit ENTER to test __str__ with a 33x17 grid.")
+    system("clear")
+    print(str(grid))
     
