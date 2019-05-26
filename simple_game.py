@@ -15,19 +15,19 @@ class Block:
                          "y": starting_y}
         
     def move(self, direction):
-        if(direction == "up"):
+        if(direction == "up" and self.position["y"] < 16):
             screen.changePixel(self.position["x"], self.position["y"], 0, 0, 0)
             self.position["y"] += 1
             screen.changePixel(self.position["x"], self.position["y"], self.red, self.green, self.blue)
-        elif(direction == "down"):
+        elif(direction == "down" and self.position["y"] > 0):
             screen.changePixel(self.position["x"], self.position["y"], 0, 0, 0)
             self.position["y"] -= 1
             screen.changePixel(self.position["x"], self.position["y"], self.red, self.green, self.blue)
-        elif(direction == "left"):
+        elif(direction == "left" and self.position["x"] < 32):
             screen.changePixel(self.position["x"], self.position["y"], 0, 0, 0)
             self.position["x"] += 1
             screen.changePixel(self.position["x"], self.position["y"], self.red, self.green, self.blue)
-        elif(direction == "right"):
+        elif(direction == "right" and self.position["x"] > 0):
             screen.changePixel(self.position["x"], self.position["y"], 0, 0, 0)
             self.position["x"] -= 1
             screen.changePixel(self.position["x"], self.position["y"], self.red, self.green, self.blue)
