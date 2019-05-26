@@ -1,4 +1,4 @@
-# My Video Game Table
+# My Arcade Table
 ## About
 Hello! My name is Seth Peace! My dad and I decided to make a table that you can play games on. This is the software for that table. It's powered by Python and PyGame on a Raspberry Pi 3 B+.
 ## Status
