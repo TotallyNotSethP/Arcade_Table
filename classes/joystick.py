@@ -21,10 +21,16 @@ class Joystick:
                     if((input_ == "up"    and self.joystick.get_axis(0) > 0) or
                        (input_ == "down"  and self.joystick.get_axis(0) < 0) or
                        (input_ == "left"  and self.joystick.get_axis(1) < 0) or 
-                       (input_ == "right" and self.joystick.get_axis(1) > 0) or 
-                       (input_ == "a"     and self.joystick.get_button(0))   or 
-                       (input_ == "b"     and self.joystick.get_button(1))): 
+                       (input_ == "right" and self.joystick.get_axis(1) > 0)): 
                         listener()
+                    elif(input_ == "a" and self.joystick.get_button(0)):
+                        listener()
+                        while(self.joystick.get_button(0)):
+                            sleep(0.1)
+                    elif(input_ == "b" and self.joystick.get_button(1)):
+                        listener()
+                        while(self.joystick.get_button(1)):
+                            sleep(0.1)
                     sleep(0.1)
             except:
                 sleep(0)
