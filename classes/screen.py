@@ -8,7 +8,9 @@ from grid          import Grid
 from color         import Color
 
 class Screen:
-    def __init__(self, grid_height, grid_width, height = 500, width = 500, sim = True):
+    def __init__(self, grid_height, grid_width, size = 10, sim = True):
+        width = grid_width * size
+        height = grid_height * size
         self.display      = pygame.display.set_mode((width, height))
         self.grid         = Grid(grid_height, grid_width)
         self.pixel_width  = int(width/grid_width)
@@ -58,11 +60,11 @@ if(__name__ == "__main__"):
         selection = raw_input("Select one: ")
         system("clear")
         if(int(selection) == 1):
-            screen = Screen(17, 33, height = 400, sim = True)
+            screen = Screen(17, 33, sim = True)
             for x in range(33):
                 for y in range(17):
                     screen.changePixel(x, y, randint(0, 255), randint(0, 255), randint(0, 255))
-            while(True):
+            while(not screen.threadEnded):
                 sleep(0.1)
             screen.endThread()
         elif(int(selection) == 2):
