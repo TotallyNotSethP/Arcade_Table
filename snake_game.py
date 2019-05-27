@@ -34,6 +34,13 @@ class Snake:
             i += 1
         for block in self.blocks:
             block["block"].move(block["direction"])
+            
+    def grow(self):
+        if(self.blocks[-1]["direction"] == "up"):
+            self.blocks.append({"block": Block(self.screen,
+                                               self.blocks[-1]["block"].position["x"], self.blocks[-1]["block"].position["y"] - 1,
+                                               self.red, self.green, self.blue, 0, 0, 0),
+                                "direction": "up"})
         
 if(__name__ == "__main__"):
     screen = Screen(17, 33)
