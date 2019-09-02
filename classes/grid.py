@@ -1,5 +1,5 @@
-from color import Color
-from os    import system
+from .color import Color
+from os     import system
 
 class Grid:
     def __init__(self, height, width):

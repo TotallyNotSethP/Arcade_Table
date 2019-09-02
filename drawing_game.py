@@ -1,8 +1,8 @@
-from classes.screen   import Screen
-from classes.joystick import Joystick
-from classes.block    import Block
-from time             import sleep
-from os               import system
+from .classes.screen   import Screen
+from .classes.joystick import Joystick
+from .classes.block    import Block
+from time              import sleep
+from os                import system
 
 def alt_draw(cursor):
     global color

@@ -1,6 +1,6 @@
-from classes.screen   import Screen
-from classes.block    import Block
-from classes.joystick import Joystick
+from .classes.screen   import Screen
+from .classes.block    import Block
+from .classes.joystick import Joystick
 
 class Snake:
     def __init__(self, screen, head_starting_x, head_starting_y, starting_length, red, green, blue):

@@ -1,14 +1,14 @@
-from __future__       import print_function
-from classes.screen   import Screen
-from classes.joystick import Joystick
-from classes.block    import Block
-from os               import system
-from time             import sleep
-            
+from __future__        import print_function
+from .classes.screen   import Screen
+from .classes.joystick import Joystick
+from .classes.block    import Block
+from os                import system
+from time              import sleep
+
 def simple_game():
-    screen   = Screen(17, 33)
+    screen   = Screen(6, 4)
     joystick = Joystick(0)
-    avatar   = Block(screen, 16, 8, 255, 255, 255, 0, 0, 0)
+    avatar   = Block(screen, 0, 0, 255, 255, 255, 0, 0, 0)
     
     try:
         joystick.inputListener("up",    lambda: avatar.move("up"))
@@ -18,9 +18,10 @@ def simple_game():
         while(not screen.threadEnded):
             sleep(0.1)
     except:
-        sleep(0)
-    joystick.endListeners()
-    system("clear")
+        joystick.endListeners()
+        screen.endThread()
+        screen.deinit()
+        #system("clear")
 
 if(__name__ == "__main__"):
     simple_game()
